@@ -7,7 +7,7 @@
         "all_frames": false,
         "run_at": "document_start",
         "matches": [
-            "*/_layouts/15/workbench.aspx"
+            "https://*.sharepoint.com/*workbench.aspx"
         ],
         "js": [
             "RemoveWarning.js"

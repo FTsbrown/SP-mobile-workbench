@@ -7,11 +7,12 @@ window.addEventListener('resize', function() {
         clearTimeout(timeoutId);
     }
     timeoutId = setTimeout(function() {
-        console.log("Resize");
-        const layers = document.getElementsByClassName("ms-Layer--fixed");
-        while (layers.length > 0) {
-            layers[0].parentNode.removeChild(layers[0]);
-        }
-        console.log(layers);
+        const layers = Array.from(document.getElementsByClassName("ms-Layer--fixed"));
+        layers.forEach((layer) => {
+            if (layer.innerText.indexOf("Widen your browser window") >= 0) {
+                console.log("Removing 'Widen your browser window' popup");
+                layer.parentNode.removeChild(layer);
+            }
+        });
     }, 100);
 }, false);
